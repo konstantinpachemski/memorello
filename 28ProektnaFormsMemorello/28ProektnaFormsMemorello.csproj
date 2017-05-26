@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E04BA19-4FFB-41C9-8C36-649061C3C046}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_28ProektnaFormsMemorello</RootNamespace>
+    <AssemblyName>28ProektnaFormsMemorello</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ObjectListView, Version=2.9.2.0, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.ClientProfile.2.9.4\lib\net40-Client\ObjectListView.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCard.Designer.cs">
+      <DependentUpon>CreateCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateList.Designer.cs">
+      <DependentUpon>CreateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameBoard.Designer.cs">
+      <DependentUpon>RenameBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateBoard.Designer.cs">
+      <DependentUpon>CreateBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Board.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CreateLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateLogin.Designer.cs">
+      <DependentUpon>CreateLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenameCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameCard.Designer.cs">
+      <DependentUpon>RenameCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RenameList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RenameList.Designer.cs">
+      <DependentUpon>RenameList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowCards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowCards.Designer.cs">
+      <DependentUpon>ShowCards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowLists.Designer.cs">
+      <DependentUpon>ShowLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowBoards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowBoards.Designer.cs">
+      <DependentUpon>ShowBoards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateList.resx">
+      <DependentUpon>CreateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenameBoard.resx">
+      <DependentUpon>RenameBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateBoard.resx">
+      <DependentUpon>CreateBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateLogin.resx">
+      <DependentUpon>CreateLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RenameList.resx">
+      <DependentUpon>RenameList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowCards.resx">
+      <DependentUpon>ShowCards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowLists.resx">
+      <DependentUpon>ShowLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowBoards.resx">
+      <DependentUpon>ShowBoards.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
