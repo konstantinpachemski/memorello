@@ -13,9 +13,10 @@ namespace _28ProektnaFormsMemorello
     public partial class RenameList : Form
     {
         public string name;
-        public RenameList()
+        public RenameList(string thisName)
         {
             InitializeComponent();
+            nameBox.Text = thisName;
         }
         private void button2_Click(object sender, EventArgs e)
         {

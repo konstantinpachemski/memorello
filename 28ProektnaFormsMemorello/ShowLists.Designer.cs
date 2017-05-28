@@ -49,6 +49,7 @@
             this.listView1.TileSize = new System.Drawing.Size(100, 100);
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Tile;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // label1
             // 
@@ -89,7 +90,7 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Lists
+            // ShowLists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +100,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Name = "Lists";
+            this.MaximizeBox = false;
+            this.Name = "ShowLists";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lists";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShowLists_FormClosed);
             this.Load += new System.EventHandler(this.ShowLists_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -50,11 +50,11 @@ namespace _28ProektnaFormsMemorello
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(listView1.SelectedItems.Count > 0) { 
-                RenameList renameList = new RenameList();
+            if(listView1.SelectedItems.Count > 0) {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                RenameList renameList = new RenameList(user.Boards[bIndex].Lists[i].Name);
                 if (renameList.ShowDialog() == DialogResult.OK)
                 {
-                    int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                     user.Boards[bIndex].Lists[i].Name = renameList.name;
                     loadLists();
                 }
@@ -78,6 +78,26 @@ namespace _28ProektnaFormsMemorello
                 }
             
             }
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                this.Hide();
+                ShowCards showCards = new ShowCards(user, bIndex, i);
+                if (showCards.ShowDialog() == DialogResult.OK)
+                {
+                    user = showCards.user;
+                }
+            }
+            this.Show();
+        }
+
+        private void ShowLists_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

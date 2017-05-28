@@ -39,18 +39,18 @@ namespace _28ProektnaFormsMemorello
                         Card temp11 = new Card("Get up from bed", "The first thing i need to do it get up");
                         Card temp22 = new Card("Go to work", "The second thing is that I need to do work work");
                         Card temp33 = new Card("If not ded - repeat again", "The last thing i need now is to die");
-                        guestUser.Boards[i].Lists[i].AddCard(temp11);
-                        guestUser.Boards[i].Lists[i].AddCard(temp22);
-                        guestUser.Boards[i].Lists[i].AddCard(temp33);
+                        guestUser.Boards[i].Lists[j].AddCard(temp11);
+                        guestUser.Boards[i].Lists[j].AddCard(temp22);
+                        guestUser.Boards[i].Lists[j].AddCard(temp33);
                     }
                     if(j == 1)
                     {
                         Card temp11 = new Card("Pass DM1", "The first thing i need to pass DM1");
                         Card temp22 = new Card("Pass VP", "The second thing is that I need to pass VP");
                         Card temp33 = new Card("Pass the blunt", "The last thing i need is to share this");
-                        guestUser.Boards[i].Lists[i].AddCard(temp11);
-                        guestUser.Boards[i].Lists[i].AddCard(temp22);
-                        guestUser.Boards[i].Lists[i].AddCard(temp33);
+                        guestUser.Boards[i].Lists[j].AddCard(temp11);
+                        guestUser.Boards[i].Lists[j].AddCard(temp22);
+                        guestUser.Boards[i].Lists[j].AddCard(temp33);
                     }
                 }
             }
@@ -85,7 +85,12 @@ namespace _28ProektnaFormsMemorello
                     {
                         this.Hide();
                         ShowBoard showBoards = new ShowBoard(users[i]);
-                        showBoards.Show();
+                        if (showBoards.ShowDialog() == DialogResult.OK)
+                        {
+                            users[i] = showBoards.user;
+                            this.Show();
+                        }
+                            
                         break;
                         
                     }

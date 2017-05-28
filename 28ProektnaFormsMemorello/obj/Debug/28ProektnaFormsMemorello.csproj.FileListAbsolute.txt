@@ -16,3 +16,5 @@ D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello
 D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello\obj\Debug\28ProektnaFormsMemorello.csprojResolveAssemblyReference.cache
 D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello\obj\Debug\_28ProektnaFormsMemorello.CreateList.resources
 D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello\obj\Debug\_28ProektnaFormsMemorello.RenameList.resources
+D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello\obj\Debug\_28ProektnaFormsMemorello.ShowCards.resources
+D:\Projects\Visual Studio 2017\28ProektnaFormsMemorello\28ProektnaFormsMemorello\obj\Debug\_28ProektnaFormsMemorello.CreateCard.resources

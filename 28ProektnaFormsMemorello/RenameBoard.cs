@@ -17,6 +17,11 @@ namespace _28ProektnaFormsMemorello
         {
             InitializeComponent();
         }
+        public RenameBoard(string thisName)
+        {
+            InitializeComponent();
+            nameBox.Text = thisName;
+        }
         private void nameBox_Validating(object sender, CancelEventArgs e)
         {
             e.Cancel = nameValidate(nameBox.Text.Trim());

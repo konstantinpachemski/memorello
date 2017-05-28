@@ -12,7 +12,7 @@ namespace _28ProektnaFormsMemorello
 {
     public partial class ShowBoard : Form
     {
-        public static User user;
+        public User user;
         public ShowBoard()
         {
             InitializeComponent();
@@ -48,11 +48,11 @@ namespace _28ProektnaFormsMemorello
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(listView1.SelectedItems.Count > 0) { 
-                RenameBoard renameBoard = new RenameBoard();
+            if(listView1.SelectedItems.Count > 0) {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                RenameBoard renameBoard = new RenameBoard(user.Boards[i].Name);
                 if (renameBoard.ShowDialog() == DialogResult.OK)
                 {
-                    int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                     user.Boards[i].Name = renameBoard.name;
                     loadBoards();
                 }
@@ -91,6 +91,11 @@ namespace _28ProektnaFormsMemorello
                     this.Show();
                 }
             }
+        }
+
+        private void ShowBoard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult = DialogResult.OK;
         }
     }
 }

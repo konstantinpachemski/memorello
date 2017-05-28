@@ -120,6 +120,9 @@
     <Compile Include="User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateCard.resx">
+      <DependentUpon>CreateCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateList.resx">
       <DependentUpon>CreateList.cs</DependentUpon>
     </EmbeddedResource>

@@ -89,7 +89,7 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // ListsAndCards
+            // ShowBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,9 +99,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Name = "ListsAndCards";
+            this.MaximizeBox = false;
+            this.Name = "ShowBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Boards";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShowBoard_FormClosed);
             this.Load += new System.EventHandler(this.ShowBoards_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
