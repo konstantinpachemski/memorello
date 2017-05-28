@@ -125,6 +125,7 @@
             this.ClientSize = new System.Drawing.Size(352, 320);
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateCard";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add new card";
             this.Load += new System.EventHandler(this.CreateCard_Load);

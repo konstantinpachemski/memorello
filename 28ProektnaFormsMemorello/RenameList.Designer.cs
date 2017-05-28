@@ -103,6 +103,7 @@
             this.ClientSize = new System.Drawing.Size(352, 187);
             this.Controls.Add(this.groupBox1);
             this.Name = "RenameList";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rename list";
             this.Load += new System.EventHandler(this.RenameList_Load);

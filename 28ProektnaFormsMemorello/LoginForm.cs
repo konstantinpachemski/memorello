@@ -22,7 +22,7 @@ namespace _28ProektnaFormsMemorello
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            User guestUser = new User("g", "g");
+            User guestUser = new User("guest", "guest");
             users.Add(guestUser);
 
             Board guestBoard = new Board("My life");
@@ -78,31 +78,38 @@ namespace _28ProektnaFormsMemorello
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            for(int i=0; i < users.Count; i++)
+            bool usernameFound = false;
+            bool passwordFound = false;
+            for (int i = 0; i < users.Count; i++)
                 if (users[i].Username.Equals(usernameBox.Text.Trim()))
                 {
+                    usernameFound = true;
                     if (users[i].Password.Equals(passwordBox.Text.Trim()))
                     {
                         this.Hide();
+                        passwordFound = true;
                         ShowBoard showBoards = new ShowBoard(users[i]);
                         if (showBoards.ShowDialog() == DialogResult.OK)
                         {
                             users[i] = showBoards.user;
                             this.Show();
                         }
-                            
+
                         break;
-                        
+
                     }
-                    else
-                    { 
+                    else if(!passwordFound)
+                    {
                         MessageBox.Show("Password does not match.");
+                        passwordFound = false;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No such username registered");
-                }
+            if (!usernameFound)
+            {
+                MessageBox.Show("No such username registered");
+            }
         }
+
     }
 }
+

@@ -32,6 +32,30 @@ namespace _28ProektnaFormsMemorello
         //{
         //    return string.Format("{0}", Enum.GetName(typeof(Status), StatusNumber));
         //}
-
+        public void ToggleStatus()
+        {
+            if (StatusNumber == 3)
+            {
+                StatusNumber = 1;
+            }
+            else
+            {
+                StatusNumber++;
+            }
+        }
+        public void IncrementPriority()
+        {
+            if(Priority <= 4)
+            {
+                Priority++;
+            }
+        }
+        public void DecrementPriority()
+        {
+            if (Priority >= 1)
+            {
+                Priority--;
+            }
+        }
     }
 }

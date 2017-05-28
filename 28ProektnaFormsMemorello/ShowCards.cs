@@ -16,6 +16,8 @@ namespace _28ProektnaFormsMemorello
         public User user;
         public int bIndex;
         public int lIndex;
+        public int selectedIndex;
+        public bool selection = false;
         public ShowCards()
         {
             InitializeComponent();
@@ -41,15 +43,23 @@ namespace _28ProektnaFormsMemorello
                     }                                                                                       //3
                     else
                     {
-                        item1.SubItems.Add(user.Boards[bIndex].Lists[lIndex].Cards[i].Priority.ToString()); //}
+                        ListViewItem priority = new ListViewItem();
+                        string p = "";
+                        for (int j = 0; j < user.Boards[bIndex].Lists[lIndex].Cards[i].Priority; j++)
+                            p += "×";
+                        item1.SubItems.Add(p);                                                              //}
                     }
                     //item1.SubItems.Add(user.Boards[bIndex].Lists[lIndex].Cards[i].getStatus());           //4
                     item1.SubItems.Add(user.Boards[bIndex].Lists[lIndex].Cards[i].Status[user.Boards[bIndex].Lists[lIndex].Cards[i].StatusNumber]);
                     listView1.Items.Add(item1);
                 }
             }
+            if (selection)
+            {
+                listView1.Items[selectedIndex].Selected = true;
+            }
+            listView1.Focus();
 
-            //listView1.Items.AddRange(new ListViewItem[] { item1, item2, item3 });
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,7 +96,8 @@ namespace _28ProektnaFormsMemorello
             CreateCard addCard = new CreateCard();
             if (addCard.ShowDialog() == DialogResult.OK)
             {
-                user.Boards[bIndex].Lists[lIndex].Cards.Add(addCard.card);
+                Card newCard = new Card(addCard.name, addCard.description);
+                user.Boards[bIndex].Lists[lIndex].Cards.Add(newCard);
                 loadCards();
             }
         }
@@ -104,6 +115,8 @@ namespace _28ProektnaFormsMemorello
                 {
                     int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                     user.Boards[bIndex].Lists[lIndex].Cards.Remove(user.Boards[bIndex].Lists[lIndex].Cards[i]);
+                    selection = false;
+                    selectedIndex = 0;
                     loadCards();
                 }
 
@@ -118,11 +131,48 @@ namespace _28ProektnaFormsMemorello
                 CreateCard createCard = new CreateCard(user.Boards[bIndex].Lists[lIndex].Cards[i]);
                 if (createCard.ShowDialog() == DialogResult.OK)
                 {
-                    user.Boards[bIndex].Lists[lIndex].Cards[i] = createCard.card;
+                    user.Boards[bIndex].Lists[lIndex].Cards[i].Name = createCard.name;
+                    user.Boards[bIndex].Lists[lIndex].Cards[i].Description = createCard.description;
                     loadCards();
                 }
             }
             
+        }
+
+        private void toggleStatusButton_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                user.Boards[bIndex].Lists[lIndex].Cards[i].ToggleStatus();
+                loadCards();
+            }
+        }
+
+        private void buttonIncrement_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                user.Boards[bIndex].Lists[lIndex].Cards[i].IncrementPriority();
+                loadCards();
+            }
+        }
+
+        private void buttonDecrement_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int i = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                user.Boards[bIndex].Lists[lIndex].Cards[i].DecrementPriority();
+                loadCards();
+            }
+        }
+
+        private void listView1_ItemActivate(object sender, EventArgs e)
+        {
+            selection = true;
+            selectedIndex = listView1.FocusedItem.Index;
         }
     }
 }

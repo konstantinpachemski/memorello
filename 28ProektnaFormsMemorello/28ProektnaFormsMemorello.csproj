@@ -87,12 +87,6 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RenameCard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RenameCard.Designer.cs">
-      <DependentUpon>RenameCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="RenameList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

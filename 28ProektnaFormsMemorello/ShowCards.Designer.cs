@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowCards));
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.buttonIncrement = new System.Windows.Forms.Button();
             this.buttonDecrement = new System.Windows.Forms.Button();
             this.createCardButton = new System.Windows.Forms.Button();
@@ -42,25 +44,26 @@
             // 
             this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.BackColor = System.Drawing.SystemColors.Window;
+            this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 23);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(587, 343);
+            this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 0;
             this.listView1.TileSize = new System.Drawing.Size(100, 150);
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.ItemActivate += new System.EventHandler(this.listView1_ItemActivate);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
-            // label1
+            // imageList1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cards";
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "star.png");
             // 
             // buttonIncrement
             // 
@@ -71,6 +74,7 @@
             this.buttonIncrement.TabIndex = 2;
             this.buttonIncrement.Text = "++";
             this.buttonIncrement.UseVisualStyleBackColor = true;
+            this.buttonIncrement.Click += new System.EventHandler(this.buttonIncrement_Click);
             // 
             // buttonDecrement
             // 
@@ -81,6 +85,7 @@
             this.buttonDecrement.TabIndex = 3;
             this.buttonDecrement.Text = "--";
             this.buttonDecrement.UseVisualStyleBackColor = true;
+            this.buttonDecrement.Click += new System.EventHandler(this.buttonDecrement_Click);
             // 
             // createCardButton
             // 
@@ -124,6 +129,7 @@
             this.toggleStatusButton.TabIndex = 7;
             this.toggleStatusButton.Text = "Toggle status";
             this.toggleStatusButton.UseVisualStyleBackColor = true;
+            this.toggleStatusButton.Click += new System.EventHandler(this.toggleStatusButton_Click);
             // 
             // ShowCards
             // 
@@ -136,7 +142,6 @@
             this.Controls.Add(this.createCardButton);
             this.Controls.Add(this.buttonDecrement);
             this.Controls.Add(this.buttonIncrement);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -152,7 +157,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button buttonIncrement;
         private System.Windows.Forms.Button buttonDecrement;
@@ -160,5 +164,6 @@
         private System.Windows.Forms.Button deleteCardButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button toggleStatusButton;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

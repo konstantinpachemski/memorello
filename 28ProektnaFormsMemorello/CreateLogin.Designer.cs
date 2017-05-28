@@ -55,6 +55,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(223, 20);
             this.passwordBox.TabIndex = 1;
+            this.passwordBox.UseSystemPasswordChar = true;
             this.passwordBox.Validating += new System.ComponentModel.CancelEventHandler(this.PasswordBox_Validating);
             // 
             // label1
@@ -102,6 +103,7 @@
             this.confirmPasswordBox.Name = "confirmPasswordBox";
             this.confirmPasswordBox.Size = new System.Drawing.Size(223, 20);
             this.confirmPasswordBox.TabIndex = 6;
+            this.confirmPasswordBox.UseSystemPasswordChar = true;
             this.confirmPasswordBox.Validating += new System.ComponentModel.CancelEventHandler(this.ConfirmPasswordBox_Validating);
             // 
             // label3
@@ -121,6 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(377, 280);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.confirmPasswordBox);
@@ -131,6 +134,7 @@
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
             this.Name = "CreateLoginForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateLogin";
             this.Load += new System.EventHandler(this.CreateLoginForm_Load);

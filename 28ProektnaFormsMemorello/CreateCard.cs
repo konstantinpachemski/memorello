@@ -12,17 +12,17 @@ namespace _28ProektnaFormsMemorello
 {
     public partial class CreateCard : Form
     {
-        public Card card;
+        public string name;
+        public string description;
         public CreateCard()
         {
             InitializeComponent();
         }
         public CreateCard(Card thisCard)
         {
-            card = thisCard;
             InitializeComponent();
-            nameBox.Text = card.Name;
-            descriptionBox.Text = card.Description;
+            nameBox.Text = thisCard.Name;
+            descriptionBox.Text = thisCard.Description;
         }
 
 
@@ -45,7 +45,8 @@ namespace _28ProektnaFormsMemorello
         {
             if (!nameValidate(nameBox.Text.Trim()))
             {
-                card = new Card(nameBox.Text.Trim(), descriptionBox.Text.Trim());
+                name = nameBox.Text.Trim();
+                description = descriptionBox.Text.Trim();
                 DialogResult = DialogResult.OK;
             }
 
